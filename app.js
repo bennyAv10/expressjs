@@ -23,9 +23,14 @@ app.post('/api', function(req, res) {
     var geo = req.body.geo;
     
     //res.send(user_id + ' ' + token + ' ' + geo);
-    res.json({id: user_id, 
-        token : token,
-        geo: geo
+    res.json({
+        version: '1.0',
+        response: {
+            outputSpeech: {
+                type: 'PlainText',
+                text: 'You are lucky man'
+            }
+        }
     });
 });
 
